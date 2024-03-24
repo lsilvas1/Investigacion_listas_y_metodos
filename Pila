@@ -1,0 +1,123 @@
+import java.util.Stack;
+
+public class myStackTest2 {
+
+       public static void main(String[] args)
+       {
+
+           Stack myStack= new Stack<>();
+
+           System.out.println("Is my stack empty? " + myStack.empty());
+// pushing elements into stack
+           myStack.push("Orange Ball");
+           myStack.push("Violet Ball");
+           myStack.push("Green Ball");
+
+//prints elements of the stack
+           System.out.println("Elements in Stack: " + myStack);
+           System.out.println("Is my stack empty? " + myStack.empty());
+           while (!myStack.isEmpty()) {
+               myStack.pop();
+               System.out.println("Elements in Stack: " + myStack);
+               System.out.println("Is my stack empty? " + myStack.empty());
+           }
+       }
+   }
+
+
+import java.util.Stack;
+
+public class myStackTest2 {
+
+       public static void main(String[] args)
+       {
+
+           Stack myStack= new Stack<>();
+
+           System.out.println("Is my stack empty? " + myStack.empty());
+// pushing elements into stack
+           myStack.add("Orange Ball");
+           myStack.add("Violet Ball");
+           myStack.add("Green Ball");
+
+//prints elements of the stack
+           System.out.println("Elements in Stack: " + myStack);
+           System.out.println("Is my stack empty? " + myStack.empty());
+           while (!myStack.isEmpty()) {
+               myStack.pop();
+               System.out.println("Elements in Stack: " + myStack);
+               System.out.println("Is my stack empty? " + myStack.empty());
+           }
+       }
+   }
+
+import java.util.Arrays;
+
+public class MyStack {
+
+   private int maxSize;
+   private String[] stackArray;
+   private int top;
+
+   public MyStack(int size) {
+       this.maxSize = size;
+       stackArray = new String[maxSize];
+       top = -1;
+   }
+
+   public String push (String element) {
+       return stackArray[++top] = element;
+
+   }
+
+   public String pop (String element) {
+
+       if (isEmpty())
+       {
+           System.out.println("Underflow\nProgram Terminated");
+           System.exit(-1);
+       }
+
+       System.out.println("Removing " + readTop());
+
+       return stackArray[top--];
+
+   }
+
+   public String readTop() {
+       return stackArray[top];
+
+   }
+
+   public boolean isEmpty() {
+       return (top ==  -1);
+   }
+
+   public boolean isFull() {
+       return (top == maxSize - 1);
+   }
+
+   public void printStack(){
+       System.out.println(Arrays.toString(stackArray));
+   }
+}
+
+public class myStackTest {
+   public static void main(String[] args) {
+       MyStack  myStack = new MyStack(3);
+       System.out.println("Is my stack empty? " + myStack.isEmpty());
+
+       myStack.push("Orange Ball");
+       myStack.push("Violet Ball");
+       myStack.push("Green Ball");
+
+      myStack.printStack();
+
+       System.out.println("Is my stack empty? " + myStack.isEmpty());
+       while (!myStack.isEmpty()) {
+           myStack.pop(myStack.readTop());
+           System.out.println("Is my stack empty? " + myStack.isEmpty());
+       }
+   }
+
+}
